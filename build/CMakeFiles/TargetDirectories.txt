@@ -1,3 +1,0 @@
-/home/hussain/computer_vision/CourseWork/Project4/build/CMakeFiles/main.dir
-/home/hussain/computer_vision/CourseWork/Project4/build/CMakeFiles/edit_cache.dir
-/home/hussain/computer_vision/CourseWork/Project4/build/CMakeFiles/rebuild_cache.dir
