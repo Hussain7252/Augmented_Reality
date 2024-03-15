@@ -14,6 +14,10 @@ int main(){
     getline(cin,ipstr);
     cout<<"Enter the calibration Image storage path"<<endl;
     getline(cin,calibimg);
+    int debug;
+    cout<<"Enter anything except 0 for debug mode"<<endl;
+    cin>>debug;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     // Enter the IP address on which your camera is streaming and check if frames are available
     //VideoCapture cap("http://"+ipstr+"/video");
     VideoCapture cap(0);
@@ -98,6 +102,14 @@ int main(){
             break;
         }
     }
-
+    if(debug != 0){
+        for(int i=0;i<corner_list.size();i++){
+            for(int j=0;j<corner_list[i].size();j++){
+                cout<<corner_list[i][j].x<<","<<corner_list[i][j].y<<" ";
+            }
+            cout<<endl;
+        }
+    }
+    destroyAllWindows();
     return 0;
 }
