@@ -62,9 +62,9 @@ int main()
 
             // Providing world coordinates for creating axis in the image plane
             vector<Point3f> worldFrame;
-            worldFrame.push_back(Point3f(-7, 0, 0));
-            worldFrame.push_back(Point3f(0, -7, 0));
-            worldFrame.push_back(Point3f(2, 0, 0));
+            worldFrame.push_back(Point3f(0, 0, 0));
+            worldFrame.push_back(Point3f(8, 0, 0));
+            worldFrame.push_back(Point3f(6, 0, 0));
             worldFrame.push_back(Point3f(0, -2, 0));
 
             // Projecting 3D coordinates into 2D coordinates
@@ -72,10 +72,10 @@ int main()
             projectPoints(worldFrame, rot, trans, camera_matrix, dist_coeff, cameraFrame);
 
             // drawing circles of radius 20 on corresponding points
-            circle(frame, cameraFrame[0], 10, Scalar(0, 255, 255), FILLED, LINE_8);
-            circle(frame, cameraFrame[1], 10, Scalar(0, 255, 255), FILLED, LINE_8);
-            circle(frame, cameraFrame[2], 10, Scalar(0, 255, 255), FILLED, LINE_8);
-            circle(frame, cameraFrame[3], 10, Scalar(0, 255, 255), FILLED, LINE_8);
+            circle(frame, cameraFrame[0], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            circle(frame, cameraFrame[1], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            circle(frame, cameraFrame[2], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            circle(frame, cameraFrame[3], 10, Scalar(0, 0, 255), FILLED, LINE_8);
 
             if (debug != 0)
             {

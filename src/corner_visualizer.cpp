@@ -12,7 +12,6 @@ using namespace cv;
 
 int main()
 {
-
     Mat frame;
     Mat gray;
     VideoCapture cap(0);
