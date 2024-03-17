@@ -80,9 +80,9 @@ int main()
             // Providing the axes in the image frame
             vector<Point3f> axesFrame;
             axesFrame.push_back(Point3f(0, 0, 0));
-            axesFrame.push_back(Point3f(5, 0, 0));
-            axesFrame.push_back(Point3f(0, -5, 0));
-            axesFrame.push_back(Point3f(0, 0, -5));
+            axesFrame.push_back(Point3f(3, 0, 0));
+            axesFrame.push_back(Point3f(0, -3, 0));
+            axesFrame.push_back(Point3f(0, 0, -3));
 
             // Providing the corners for black background
             vector<Point3f> cornerFrame;
