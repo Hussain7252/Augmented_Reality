@@ -67,15 +67,28 @@ int main()
             worldFrame.push_back(Point3f(6, 0, 0));
             worldFrame.push_back(Point3f(0, -2, 0));
 
+            // Providing the axes in the image frame
+            vector<Point3f> axesFrame;
+            axesFrame.push_back(Point3f(0, 0, 0));
+            axesFrame.push_back(Point3f(5, 0, 0));
+            axesFrame.push_back(Point3f(0, -5, 0));
+            axesFrame.push_back(Point3f(0, 0, -5));
+
             // Projecting 3D coordinates into 2D coordinates
             vector<Point2f> cameraFrame;
+            vector<Point2f> cameraAxes;
             projectPoints(worldFrame, rot, trans, camera_matrix, dist_coeff, cameraFrame);
+            projectPoints(axesFrame, rot, trans, camera_matrix, dist_coeff, cameraAxes);
 
             // drawing circles of radius 20 on corresponding points
-            circle(frame, cameraFrame[0], 10, Scalar(0, 0, 255), FILLED, LINE_8);
-            circle(frame, cameraFrame[1], 10, Scalar(0, 0, 255), FILLED, LINE_8);
-            circle(frame, cameraFrame[2], 10, Scalar(0, 0, 255), FILLED, LINE_8);
-            circle(frame, cameraFrame[3], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            // circle(frame, cameraFrame[0], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            // circle(frame, cameraFrame[1], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            // circle(frame, cameraFrame[2], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+            // circle(frame, cameraFrame[3], 10, Scalar(0, 0, 255), FILLED, LINE_8);
+
+            line(frame, cameraAxes[0], cameraAxes[1], Scalar(0, 255, 255), 2); // X-axis in GR
+            line(frame, cameraAxes[0], cameraAxes[2], Scalar(255, 0, 255), 2); // Y-axis in BR
+            line(frame, cameraAxes[0], cameraAxes[3], Scalar(255, 255, 0), 2); // Z-axis in BG
 
             if (debug != 0)
             {
